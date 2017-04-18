@@ -13,6 +13,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC64107
 	&& apt-get -y clean autoclean \
 	&& apt-get -y autoremove \
 	&& rm -rf /var/lib/{apt,dpkg,cache,log}/ \
+	&& mkdir -p /var/cache/nginx /var/log/nginx \
 	&& chmod 777 /var/cache/nginx
 
 COPY containerfiles /
